@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Brooding</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="manifest" href="../manifest.json">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body class="app-shell">
+  <div class="top-bar">
+    <div class="top-bar-title">
+      <i data-lucide="thermometer" width="18" height="18"></i>
+      Brooding
+    </div>
+    <div class="top-bar-actions">
+      <button class="btn btn-ghost" onclick="goTo('dashboard.html')">
+        <i data-lucide="home" width="15" height="15"></i>
+        Home
+      </button>
+    </div>
+  </div>
+
+  <div class="app-container">
+    <div class="tabs">
+      <button class="tab-button active" data-tab="ventTab">Vent Temps</button>
+      <button class="tab-button" data-tab="cropTab">Crop Fills</button>
+    </div>
+
+    <div id="ventTab" class="tab-panel active">
+      <div class="card">
+        <h2>Vent Temps</h2>
+        <div class="table-wrapper mt-12">
+          <table id="ventTable">
+            <thead>
+              <tr>
+                <th>Chick #</th>
+                <th>Barn</th>
+                <th>Temp</th>
+                <th>Date/Time</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <div class="action-row mt-12">
+          <button class="btn btn-ghost" onclick="addVentRow()">+ Add Chick</button>
+          <button class="btn btn-ghost" onclick="resetVent()">Reset</button>
+          <button class="btn btn-primary" onclick="submitVent()">Submit</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="cropTab" class="tab-panel">
+      <div class="card">
+        <h2>Crop Fills</h2>
+        <div class="table-wrapper mt-12">
+          <table id="cropTable">
+            <thead>
+              <tr>
+                <th>Chick #</th>
+                <th>Barn</th>
+                <th>Crop Fill</th>
+                <th>Date/Time</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <div class="action-row mt-12">
+          <button class="btn btn-ghost" onclick="addCropRow()">+ Add Chick</button>
+          <button class="btn btn-ghost" onclick="resetCrop()">Reset</button>
+          <button class="btn btn-primary" onclick="submitCrop()">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../assets/js/app.js"></script>
+  <script src="../assets/js/pages/brooding.js"></script>
+</body>
+</html>

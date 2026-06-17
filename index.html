@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Barn Manager Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <div class="login-wrapper">
+    <div class="card login-card">
+      <div class="login-header">
+        <div class="login-logo-wrap">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 0-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>
+        </div>
+        <h1>Barn Manager</h1>
+        <p>Enter your access code to continue.</p>
+      </div>
+
+      <div id="step-keypad">
+        <div class="keypad-display" id="keypadDisplay">••••</div>
+        <div class="keypad-grid">
+          <button class="keypad-btn" data-digit="1">1</button>
+          <button class="keypad-btn" data-digit="2">2</button>
+          <button class="keypad-btn" data-digit="3">3</button>
+          <button class="keypad-btn" data-digit="4">4</button>
+          <button class="keypad-btn" data-digit="5">5</button>
+          <button class="keypad-btn" data-digit="6">6</button>
+          <button class="keypad-btn" data-digit="7">7</button>
+          <button class="keypad-btn" data-digit="8">8</button>
+          <button class="keypad-btn" data-digit="9">9</button>
+          <button class="keypad-btn" data-action="clear">C</button>
+          <button class="keypad-btn" data-digit="0">0</button>
+          <button class="keypad-btn" data-action="enter">↵</button>
+        </div>
+        <div class="keypad-error" id="keypadError"></div>
+      </div>
+
+      <div id="step-year" class="year-step" style="display: none;">
+        <p>What year is the Farm Manager born?</p>
+        <div class="year-input-row">
+          <input type="number" id="yearInput" placeholder="YYYY" min="1900" max="2100">
+          <button class="btn btn-primary btn-small" id="yearSubmit">Enter</button>
+        </div>
+        <div class="keypad-error" id="yearError"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/pages/login.js"></script>
+</body>
+</html>

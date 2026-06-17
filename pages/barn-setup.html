@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Barn Setup</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="manifest" href="../manifest.json">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body class="app-shell">
+  <div class="top-bar">
+    <div class="top-bar-title">
+      <i data-lucide="warehouse" width="18" height="18"></i>
+      Barn Setup
+    </div>
+    <div class="top-bar-actions">
+      <button class="btn btn-ghost" onclick="goTo('dashboard.html')">
+        <i data-lucide="home" width="15" height="15"></i>
+        Home
+      </button>
+    </div>
+  </div>
+
+  <div class="app-container">
+    <div class="tabs">
+      <button class="tab-button active" data-tab="setupBarn1">Barn 1</button>
+      <button class="tab-button" data-tab="setupBarn2">Barn 2</button>
+    </div>
+
+    <!-- Barn 1 -->
+    <div id="setupBarn1" class="tab-panel active">
+      <div class="card">
+        <div class="card-toolbar">
+          <h2>Barn 1</h2>
+          <div class="card-toolbar-actions">
+            <button class="btn btn-ghost btn-small" onclick="resetBarnSetup('barn1')">Reset</button>
+            <button class="btn btn-primary btn-small" onclick="submitBarnSetup('barn1')">Submit</button>
+          </div>
+        </div>
+
+        <div class="table-wrapper mt-12">
+          <table>
+            <thead>
+              <tr>
+                <th>Task</th>
+                <th>Details</th>
+                <th>Notes</th>
+                <th>Complete</th>
+              </tr>
+            </thead>
+            <tbody id="barnSetupBody1"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Barn 2 -->
+    <div id="setupBarn2" class="tab-panel">
+      <div class="card">
+        <div class="card-toolbar">
+          <h2>Barn 2</h2>
+          <div class="card-toolbar-actions">
+            <button class="btn btn-ghost btn-small" onclick="resetBarnSetup('barn2')">Reset</button>
+            <button class="btn btn-primary btn-small" onclick="submitBarnSetup('barn2')">Submit</button>
+          </div>
+        </div>
+
+        <div class="table-wrapper mt-12">
+          <table>
+            <thead>
+              <tr>
+                <th>Task</th>
+                <th>Details</th>
+                <th>Notes</th>
+                <th>Complete</th>
+              </tr>
+            </thead>
+            <tbody id="barnSetupBody2"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Big edit modal for details -->
+  <div id="detailsModal">
+    <div class="details-modal-content">
+      <h3>Edit Details</h3>
+      <textarea id="detailsModalTextarea"></textarea>
+      <div class="mt-10 card-toolbar-actions" style="justify-content:flex-end;">
+        <button class="btn btn-ghost btn-small" id="detailsCancel">Cancel</button>
+        <button class="btn btn-primary btn-small" id="detailsSave">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../assets/js/app.js"></script>
+  <script src="../assets/js/pages/barn-setup.js"></script>
+</body>
+</html>

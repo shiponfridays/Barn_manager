@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Walk Through</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="manifest" href="../manifest.json">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body class="app-shell">
+  <div class="top-bar">
+    <div class="top-bar-title">
+      <i data-lucide="footprints" width="18" height="18"></i>
+      Walk Through
+    </div>
+    <div class="top-bar-actions">
+      <button class="btn btn-ghost" onclick="goTo('dashboard.html')">
+        <i data-lucide="home" width="15" height="15"></i>
+        Home
+      </button>
+    </div>
+  </div>
+
+  <div class="app-container">
+    <div class="tabs">
+      <button class="tab-button active" data-tab="walkBarn1">Barn 1</button>
+      <button class="tab-button" data-tab="walkBarn2">Barn 2</button>
+    </div>
+
+    <div id="walkBarn1" class="tab-panel active">
+      <div class="card">
+        <h2>Barn 1</h2>
+
+        <div class="mt-12">
+          <strong>Date/Time:</strong>
+          <span id="barn1DateTime">—</span>
+        </div>
+
+        <div id="barn1Counters" class="mt-16"></div>
+
+        <div class="mt-16">
+          <h3>Total</h3>
+          <p><strong>Daily Mortality:</strong> <span id="barn1DailyMortality">0</span></p>
+          <p><strong>Daily Culls:</strong> <span id="barn1DailyCulls">0</span></p>
+          <p><strong>Total Mortality:</strong> <span id="barn1TotalMortality">0</span></p>
+        </div>
+
+        <div class="mt-16">
+          <button class="btn btn-primary" onclick="submitWalkthrough('barn1')">Submit</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="walkBarn2" class="tab-panel">
+      <div class="card">
+        <h2>Barn 2</h2>
+
+        <div class="mt-12">
+          <strong>Date/Time:</strong>
+          <span id="barn2DateTime">—</span>
+        </div>
+
+        <div id="barn2Counters" class="mt-16"></div>
+
+        <div class="mt-16">
+          <h3>Total</h3>
+          <p><strong>Daily Mortality:</strong> <span id="barn2DailyMortality">0</span></p>
+          <p><strong>Daily Culls:</strong> <span id="barn2DailyCulls">0</span></p>
+          <p><strong>Total Mortality:</strong> <span id="barn2TotalMortality">0</span></p>
+        </div>
+
+        <div class="mt-16">
+          <button class="btn btn-primary" onclick="submitWalkthrough('barn2')">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../assets/js/app.js"></script>
+  <script src="../assets/js/pages/walkthrough.js"></script>
+</body>
+</html>

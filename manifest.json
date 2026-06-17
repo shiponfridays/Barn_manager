@@ -1,0 +1,9 @@
+{
+  "name": "Barn Manager",
+  "short_name": "Barn Manager",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#ede8e0",
+  "theme_color": "#3f4e5c",
+  "icons": []
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flock Info</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="manifest" href="../manifest.json">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body class="app-shell page-centered">
+  <div class="top-bar">
+    <div class="top-bar-title">
+      <span data-icon="chicken" data-size="20"></span>
+      Flock Info
+    </div>
+    <div class="top-bar-actions">
+      <button class="btn btn-primary btn-small" onclick="submitFlockInfo()">Submit to Sheet</button>
+      <button class="btn btn-ghost" onclick="goTo('dashboard.html')">
+        <i data-lucide="home" width="15" height="15"></i>
+        Home
+      </button>
+    </div>
+  </div>
+
+  <div class="app-container">
+    <div class="card flock-form-card">
+      <h2>Current Flock Details</h2>
+      <p class="form-intro">Updates here appear on the dashboard and export to the Flock Info sheet.</p>
+
+      <div class="form-grid mt-16">
+        <div class="form-group">
+          <label for="quotaPeriod">Quota Period</label>
+          <input type="text" id="quotaPeriod" placeholder="e.g. Q1 2026">
+        </div>
+        <div class="form-group">
+          <label for="hatchery">Hatchery</label>
+          <input type="text" id="hatchery" placeholder="Hatchery name">
+        </div>
+        <div class="form-group">
+          <label for="placementDate">Placement Date</label>
+          <input type="date" id="placementDate">
+        </div>
+        <div class="form-group">
+          <label for="processingDate">Ship Date</label>
+          <input type="date" id="processingDate">
+        </div>
+        <div class="form-group field-group" id="birdCountField">
+          <label for="birdCount"># of Birds</label>
+          <input type="number" id="birdCount" min="1" placeholder="0">
+        </div>
+      </div>
+
+      <div class="flock-form-actions">
+        <button class="btn btn-ghost" onclick="resetFlockInfoForm()">Reset</button>
+        <button class="btn btn-primary" onclick="submitFlockInfo()">Submit to Sheet</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../assets/js/app.js"></script>
+  <script src="../assets/js/pages/flock-info.js"></script>
+</body>
+</html>

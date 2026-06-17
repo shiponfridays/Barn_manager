@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Barn Manager Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="manifest" href="../manifest.json">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body class="app-shell">
+  <div class="top-bar">
+    <div class="top-bar-title">
+      <i data-lucide="home" width="18" height="18"></i>
+      Dashboard
+    </div>
+  </div>
+
+  <div class="app-container">
+
+    <!-- Flock Hero Card -->
+    <div class="card flock-summary-card">
+      <h2>Current Flock</h2>
+      <div class="flock-summary-grid">
+        <div class="flock-summary-item">
+          <div class="flock-summary-label">Quota Period</div>
+          <div class="flock-summary-value" id="dashboardQuotaPeriod">—</div>
+        </div>
+        <div class="flock-summary-item">
+          <div class="flock-summary-label">Placement Date</div>
+          <div class="flock-summary-value" id="dashboardPlacementDate">—</div>
+        </div>
+        <div class="flock-summary-item">
+          <div class="flock-summary-label">Ship Date</div>
+          <div class="flock-summary-value" id="dashboardShipDate">—</div>
+        </div>
+        <div class="flock-summary-item">
+          <div class="flock-summary-label">Bird Age</div>
+          <div class="flock-summary-value" id="dashboardBirdAge">—</div>
+        </div>
+        <div class="flock-summary-item">
+          <div class="flock-summary-label"># of Birds</div>
+          <div class="flock-summary-value" id="dashboardBirdCount">—</div>
+        </div>
+        <div class="flock-summary-item">
+          <div class="flock-summary-label">Hatchery</div>
+          <div class="flock-summary-value" id="dashboardHatchery">—</div>
+        </div>
+      </div>
+      <div class="dashboard-center-row flock-edit-row">
+        <button class="btn btn-ghost" onclick="goTo('flock-info.html')">
+          <i data-lucide="pencil" width="14" height="14"></i>
+          Edit Flock Info
+        </button>
+      </div>
+    </div>
+
+    <!-- Worksheets -->
+    <div class="card worksheets-card mt-16">
+      <h2>Worksheets</h2>
+      <div class="menu-grid">
+        <div class="menu-tile" onclick="goTo('flock-info.html')">
+          <div class="menu-tile-icon"><span data-icon="chicken" data-size="22"></span></div>
+          <div class="menu-tile-title">Flock Info</div>
+          <div class="menu-tile-sub">Quota, placement, hatchery</div>
+        </div>
+        <div class="menu-tile" onclick="goTo('barn-setup.html')">
+          <div class="menu-tile-icon"><i data-lucide="warehouse" width="18" height="18"></i></div>
+          <div class="menu-tile-title">Barn Setup</div>
+          <div class="menu-tile-sub">Pre-placement checklist</div>
+        </div>
+        <div class="menu-tile" onclick="goTo('brooding.html')">
+          <div class="menu-tile-icon"><i data-lucide="thermometer" width="18" height="18"></i></div>
+          <div class="menu-tile-title">Brooding</div>
+          <div class="menu-tile-sub">Vent temps & crop fills</div>
+        </div>
+        <div class="menu-tile" onclick="goTo('walkthrough.html')">
+          <div class="menu-tile-icon"><i data-lucide="footprints" width="18" height="18"></i></div>
+          <div class="menu-tile-title">Walk Through</div>
+          <div class="menu-tile-sub">Daily mortality entry</div>
+        </div>
+        <div class="menu-tile" onclick="goTo('weights.html')">
+          <div class="menu-tile-icon"><i data-lucide="scale" width="18" height="18"></i></div>
+          <div class="menu-tile-title">Weights</div>
+          <div class="menu-tile-sub">Hand weight worksheet</div>
+        </div>
+        <div class="menu-tile" onclick="goTo('repairs.html')">
+          <div class="menu-tile-icon"><i data-lucide="wrench" width="18" height="18"></i></div>
+          <div class="menu-tile-title">Repairs</div>
+          <div class="menu-tile-sub">Repair submission form</div>
+        </div>
+        <div class="menu-tile" onclick="goTo('reminders.html')">
+          <div class="menu-tile-icon"><i data-lucide="bell" width="18" height="18"></i></div>
+          <div class="menu-tile-title">Reminders</div>
+          <div class="menu-tile-sub">Notes & due dates</div>
+        </div>
+      </div>
+    </div>
+
+    <section class="dashboard-panels" aria-label="Tasks and reminders">
+      <article class="dashboard-panel card">
+        <header class="panel-title">
+          <i data-lucide="wrench" width="13" height="13"></i>
+          <span class="panel-title-text">To-Do (Repairs)</span>
+          <span class="badge badge-terra" id="todoCountBadge">0 items</span>
+        </header>
+        <div class="dashboard-panel-body" id="todoList">
+          <div class="list-empty">No repair items yet.</div>
+        </div>
+      </article>
+
+      <article class="dashboard-panel card">
+        <header class="panel-title">
+          <i data-lucide="bell" width="13" height="13"></i>
+          <span class="panel-title-text">Reminders</span>
+          <span class="badge" id="reminderCountBadge">0 items</span>
+        </header>
+        <div class="dashboard-panel-body" id="reminderList">
+          <div class="list-empty">No reminders yet.</div>
+        </div>
+      </article>
+    </section>
+
+  </div>
+
+  <!-- Due Today Popup -->
+  <div id="reminderPopup" class="popup-overlay">
+    <div class="card popup-card">
+      <h2>Due Today</h2>
+      <div id="reminderPopupContent" class="mt-12"></div>
+      <div class="popup-actions">
+        <button class="btn btn-primary btn-small" id="reminderPopupClose">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="completeReminderModal" class="popup-overlay" role="dialog" aria-modal="true" aria-labelledby="completeReminderModalTitle">
+    <div class="card popup-card confirm-modal is-success">
+      <div class="confirm-modal-icon" aria-hidden="true">
+        <i data-lucide="circle-check" width="20" height="20"></i>
+      </div>
+      <h2 id="completeReminderModalTitle">Complete reminder?</h2>
+      <p class="confirm-modal-text" id="completeReminderModalText"></p>
+      <div class="popup-actions confirm-modal-actions">
+        <button type="button" class="btn btn-ghost btn-small" id="completeReminderCancel">Cancel</button>
+        <button type="button" class="btn btn-success btn-small" id="completeReminderConfirm">Complete</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../assets/js/app.js"></script>
+  <script src="../assets/js/pages/dashboard.js"></script>
+</body>
+</html>
