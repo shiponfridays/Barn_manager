@@ -496,7 +496,8 @@ function notifyError(message, duration) {
   return showNotification(message, 'error', duration);
 }
 
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzF3FpJDIkQbf6WrdsePm3zwEaZaDv3uS60vpDlFUK1S5MlD4WVtkq3gMrjPSxbdidKnw/exec';
+// const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzF3FpJDIkQbf6WrdsePm3zwEaZaDv3uS60vpDlFUK1S5MlD4WVtkq3gMrjPSxbdidKnw/exec';
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby1j-mqNxf04jp7IR8jUJyIvm_rOPngq8hOKpky9czI3mWJ4ikm6vT3TYQBynXzdbYr/exec';
 
 async function postToSheet(payload) {
   showSubmitLoading(getSubmitLoadingMessage(payload));
