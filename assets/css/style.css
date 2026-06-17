@@ -117,8 +117,6 @@ body.app-shell::before {
   inset: 0;
   background: url('../images/farm-bg.jpg') center center / cover no-repeat;
   z-index: -2;
-  transform: scale(1.04);
-  animation: subtleDrift 30s ease-in-out infinite alternate;
 }
 
 /* Soft warm overlay so content stays readable */
@@ -945,16 +943,8 @@ body.app-shell.page-centered .flock-form-card {
   inset: 0;
   background: url('../images/farm-bg.jpg') center center / cover no-repeat;
   z-index: 0;
-  transform: scale(1.04);
-  animation: subtleDrift 30s ease-in-out infinite alternate;
 }
 
-@keyframes subtleDrift {
-  from { transform: scale(1.04) translate(0, 0); }
-  to   { transform: scale(1.08) translate(-1%, -1%); }
-}
-
-/* overlay to make card readable */
 .login-wrapper::after {
   content: '';
   position: fixed;
