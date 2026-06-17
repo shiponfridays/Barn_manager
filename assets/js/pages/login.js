@@ -1,4 +1,9 @@
 (function() {
+      if (typeof isAuthenticated === 'function' && isAuthenticated()) {
+        window.location.replace('pages/dashboard.html');
+        return;
+      }
+
       const CORRECT_CODE = '8811';
       const CORRECT_YEAR = 1990;
 
@@ -56,6 +61,7 @@
       yearSubmit.addEventListener('click', () => {
         const yr = parseInt(yearInput.value, 10);
         if (yr === CORRECT_YEAR) {
+          setAuthenticated();
           window.location.href = 'pages/dashboard.html';
         } else {
           yearError.textContent = 'Incorrect';

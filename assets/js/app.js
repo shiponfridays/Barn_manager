@@ -9,6 +9,51 @@ function goTo(page) {
   window.location.href = target;
 }
 
+const AUTH_SESSION_KEY = 'barn_manager_authenticated';
+
+function isAuthenticated() {
+  try {
+    return sessionStorage.getItem(AUTH_SESSION_KEY) === 'true';
+  } catch (e) {
+    return false;
+  }
+}
+
+function setAuthenticated() {
+  try {
+    sessionStorage.setItem(AUTH_SESSION_KEY, 'true');
+  } catch (e) {
+    console.warn('Unable to save auth session', e);
+  }
+}
+
+function clearAuthentication() {
+  try {
+    sessionStorage.removeItem(AUTH_SESSION_KEY);
+  } catch (e) {
+    console.warn('Unable to clear auth session', e);
+  }
+}
+
+function isProtectedAppPage() {
+  return /\/pages\//.test(window.location.pathname);
+}
+
+function getLoginPageUrl() {
+  return isProtectedAppPage() ? '../index.html' : 'index.html';
+}
+
+function requireAuth() {
+  if (!isProtectedAppPage()) return true;
+  if (isAuthenticated()) return true;
+  window.location.replace(getLoginPageUrl());
+  return false;
+}
+
+(function enforceAuthGate() {
+  requireAuth();
+})();
+
 function saveState(key, value) {
   try {
     localStorage.setItem(key, JSON.stringify(value));

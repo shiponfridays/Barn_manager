@@ -1,10 +1,15 @@
-const CACHE_NAME = 'barn-manager-cache-v21';
+const CACHE_NAME = 'barn-manager-cache-v23';
 const urlsToCache = [
   './',
   './index.html',
   './manifest.json',
   './assets/css/style.css',
   './assets/js/app.js',
+  './assets/images/favicon.png',
+  './assets/images/favicon-32.png',
+  './assets/images/favicon-192.png',
+  './assets/images/favicon-512.png',
+  './assets/images/apple-touch-icon.png',
   './assets/js/pages/login.js',
   './assets/js/pages/dashboard.js',
   './assets/js/pages/flock-info.js',
