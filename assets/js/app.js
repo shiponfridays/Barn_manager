@@ -308,12 +308,12 @@ function initChickenIcons() {
 }
 
 const CHICKEN_LOADER_SVG = `
-  <ellipse class="cl-ground" cx="60" cy="101" rx="30" ry="5.5" fill="rgba(63,78,92,0.14)"/>
+  <ellipse class="cl-ground" cx="60" cy="101" rx="30" ry="5.5" fill="rgba(0,119,184,0.12)"/>
   <g class="cl-rig">
     <g class="cl-tail">
       <path d="M26 62 L14 50 L20 60 L12 54 L22 66 Z" fill="#6d4a32"/>
       <path d="M28 64 L18 58 L24 66 Z" fill="#8f5e42"/>
-      <path d="M30 66 L22 62 L28 68 Z" fill="#a97262"/>
+      <path d="M30 66 L22 62 L28 68 Z" fill="#f37021"/>
     </g>
     <ellipse class="cl-body" cx="50" cy="70" rx="23" ry="19" fill="#fdfbf7" stroke="#d8d2c8" stroke-width="1"/>
     <path d="M34 58 Q50 52 66 58" stroke="#ebe6dd" stroke-width="1.1" fill="none" stroke-linecap="round"/>
@@ -341,9 +341,9 @@ const CHICKEN_LOADER_SVG = `
       <circle cx="85.1" cy="48.9" r="1.1" fill="#ffffff"/>
     </g>
   </g>
-  <g class="cl-spark cl-spark-1" aria-hidden="true"><circle cx="92" cy="72" r="2" fill="#b6b8a5" opacity="0.5"/></g>
-  <g class="cl-spark cl-spark-2" aria-hidden="true"><circle cx="96" cy="78" r="1.5" fill="#9bb5ad" opacity="0.45"/></g>
-  <g class="cl-spark cl-spark-3" aria-hidden="true"><circle cx="88" cy="80" r="1.2" fill="#b6b8a5" opacity="0.4"/></g>
+  <g class="cl-spark cl-spark-1" aria-hidden="true"><circle cx="92" cy="72" r="2" fill="#b8dcc8" opacity="0.5"/></g>
+  <g class="cl-spark cl-spark-2" aria-hidden="true"><circle cx="96" cy="78" r="1.5" fill="#7cb89a" opacity="0.45"/></g>
+  <g class="cl-spark cl-spark-3" aria-hidden="true"><circle cx="88" cy="80" r="1.2" fill="#b8dcc8" opacity="0.4"/></g>
 `;
 
 let submitLoadingCount = 0;
