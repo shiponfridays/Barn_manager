@@ -1,69 +1,76 @@
 /* ═══════════════════════════════════════════════════
-   BARN MANAGER — Bright Sunny · Pro Redesign v5
-   Sky · Grass · Sun · Cream · Glass · Responsive
+   BARN MANAGER — Natural Minimalist · v7
+   Warm neutrals · Olive · Linen glass · Serif display
 ═══════════════════════════════════════════════════ */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;1,14..32,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;1,14..32,400&display=swap');
 
 /* ─── TOKENS ─────────────────────────────────────── */
 :root {
   --white:        #ffffff;
-  --cream:        #fcf9f2;
-  --bg:           #eef6fb;
-  --bg-card:      #fcf9f2;
-  --bg-soft:      #f3f8ef;
+  --cream:        #f7f3ed;
+  --bg:           #ede8e0;
+  --bg-card:      #f7f3ed;
+  --bg-soft:      #e5ded3;
 
-  --sky:          #0088d4;
-  --sky-dk:       #0077b8;
-  --sky-lt:       #e6f4fc;
+  --linen:        #f5f1ea;
+  --taupe:        #c9bfb5;
+  --beige:        #d4c4b0;
+  --tan:          #b8a088;
+  --greige:       #d8d4cc;
+  --olive:        #8b8670;
+  --ivory:        #faf8f4;
+  --mushroom:     #9a8b7e;
+  --espresso:     #5c4a3d;
+  --sand:         #e5ded3;
+  --rose:         #c4a090;
 
-  --slate:        #0077b8;
-  --navy:         #0077b8;
-  --navy-mid:     #0088d4;
-  --navy-glass:   rgba(0, 119, 184, .82);
+  --slate:        #5c4a3d;
+  --navy:         #5c4a3d;
+  --navy-mid:     #7a6b5e;
+  --navy-glass:   rgba(92, 74, 61, .9);
 
-  --mist:         #b8dcc8;
-  --sage:         #4c9225;
-  --sage-dk:      #3d7a1e;
-  --sage-lt:      #e8f2e0;
-  --sage-glass:   rgba(76, 146, 37, .14);
+  --mist:         #c9bfb5;
+  --sage:         #7a7560;
+  --sage-dk:      #5c5848;
+  --sage-lt:      #e8e6dc;
+  --sage-glass:   rgba(122, 117, 96, .12);
 
-  --seafoam:      #b8dcc8;
-  --teal:         #7cb89a;
-  --teal-lt:      #e3f0ea;
+  --seafoam:      #d8d4cc;
+  --teal:         #9a8b7e;
+  --teal-lt:      #ece8e2;
 
-  --terra:        #f37021;
-  --terra-dk:     #d85f18;
-  --terra-lt:     #fef0e8;
+  --terra:        #c4a090;
+  --terra-dk:     #a88474;
+  --terra-lt:     #f0e8e4;
 
-  --sand:         #fde8d4;
-  --blush:        #fde8d4;
-  --greige:       #a8b89e;
+  --blush:        #f0e8e4;
 
-  --heading:      #1f3d18;
+  --heading:      #5c4a3d;
 
-  --border:       rgba(31, 61, 24, .1);
-  --border-mid:   rgba(31, 61, 24, .14);
+  --border:       rgba(92, 74, 61, .1);
+  --border-mid:   rgba(92, 74, 61, .16);
 
-  --text:         #1f3d18;
-  --text-2:       #4a6342;
-  --text-3:       #7a9170;
+  --text:         #5c4a3d;
+  --text-2:       #7a6b5e;
+  --text-3:       #9a8b7e;
 
-  --navy-rgb:     0, 119, 184;
-  --sage-rgb:     76, 146, 37;
-  --terra-rgb:    243, 112, 33;
-  --mist-rgb:     184, 220, 200;
-  --sky-rgb:      0, 136, 212;
+  --navy-rgb:     92, 74, 61;
+  --sage-rgb:     122, 117, 96;
+  --terra-rgb:    196, 160, 144;
+  --mist-rgb:     201, 191, 181;
 
-  --glass-bg:     rgba(252, 249, 242, .82);
-  --glass-border: rgba(255, 255, 255, .68);
-  --glass-shadow: 0 10px 40px rgba(0, 119, 184, .1);
+  --bg-image:     url('../images/farm-bg1.jpg');
+
+  --glass-bg:     rgba(247, 243, 237, .9);
+  --glass-border: rgba(255, 255, 255, .72);
+  --glass-shadow: 0 12px 40px rgba(92, 74, 61, .08);
 
   /* Shadows */
-  --sh-xs: 0 1px 3px rgba(0, 119, 184, .06);
-  --sh-sm: 0 2px 12px rgba(0, 119, 184, .08);
-  --sh-md: 0 8px 28px rgba(0, 119, 184, .1);
-  --sh-lg: 0 16px 48px rgba(0, 119, 184, .12);
+  --sh-xs: 0 1px 3px rgba(92, 74, 61, .06);
+  --sh-sm: 0 2px 12px rgba(92, 74, 61, .07);
+  --sh-md: 0 8px 28px rgba(92, 74, 61, .09);
+  --sh-lg: 0 16px 48px rgba(92, 74, 61, .11);
 
   /* Shape */
   --r-sm:  10px;
@@ -83,6 +90,7 @@
   --nav-h:  58px;
   --max-w:  1080px;
   --font:   'Inter', system-ui, sans-serif;
+  --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
 
   /* Typography — fixed role scale */
   --fs-display:  26px;
@@ -127,30 +135,31 @@ body.app-shell::before {
   content: '';
   position: fixed;
   inset: 0;
-  background: url('../images/farm-bg.jpg') center center / cover no-repeat;
+  background: var(--bg-image) center center / cover no-repeat;
   z-index: -2;
 }
 
-/* Sky-to-meadow wash — farm photo stays visible underneath */
+/* Warm linen wash — swap --bg-image when client provides new photo */
 body.app-shell::after {
   content: '';
   position: fixed;
   inset: 0;
   background: linear-gradient(
     165deg,
-    rgba(230, 244, 252, .72) 0%,
-    rgba(232, 242, 224, .68) 45%,
-    rgba(252, 249, 242, .75) 100%
+    rgba(247, 243, 237, .84) 0%,
+    rgba(229, 222, 211, .78) 48%,
+    rgba(245, 241, 234, .86) 100%
   );
   z-index: -1;
 }
 
 /* ─── TYPOGRAPHY ─────────────────────────────────── */
 h1, h2, h3 {
+  font-family: var(--font-display);
   font-weight: 700;
-  line-height: 1.22;
+  line-height: 1.18;
   color: var(--heading);
-  letter-spacing: -.01em;
+  letter-spacing: .01em;
 }
 h1 { font-size: var(--fs-title); }
 h2 { font-size: var(--fs-heading); }
@@ -214,7 +223,7 @@ body.app-shell.page-centered .app-container {
   align-items: center;
   justify-content: space-between;
   gap: 10px;
-  box-shadow: 0 2px 20px rgba(var(--sky-rgb), .28);
+  box-shadow: 0 2px 18px rgba(var(--navy-rgb), .18);
 }
 
 .top-bar-title {
@@ -238,12 +247,12 @@ body.app-shell.page-centered .app-container {
 /* ─── GLASS CARD ─────────────────────────────────── */
 .card {
   position: relative;
-  background: rgba(252, 249, 242, .88);
-  backdrop-filter: blur(22px) saturate(1.6);
-  -webkit-backdrop-filter: blur(22px) saturate(1.6);
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px) saturate(1.4);
+  -webkit-backdrop-filter: blur(20px) saturate(1.4);
   border-radius: var(--r-lg);
-  border: 1px solid rgba(255,255,255,.78);
-  box-shadow: 0 10px 36px rgba(var(--navy-rgb), .08), 0 1px 0 rgba(255,255,255,.9) inset;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow), inset 0 1px 0 rgba(255, 255, 255, .85);
   padding: 22px 22px;
   overflow: visible;
   animation: cardIn var(--t3) var(--ease) forwards;
@@ -326,10 +335,10 @@ body.app-shell.page-centered .app-container {
 }
 
 .btn-success:hover {
-  background: #d4ebc8;
+  background: #ddd9ce;
   color: var(--sage-dk);
   transform: translateY(-1px);
-  box-shadow: 0 5px 14px rgba(var(--sage-rgb), .24);
+  box-shadow: 0 5px 14px rgba(var(--sage-rgb), .2);
 }
 
 .btn-small {
@@ -708,6 +717,7 @@ tbody tr:hover td.action-cell {
 
 /* ─── PANEL TITLE ────────────────────────────────── */
 .panel-title {
+  font-family: var(--font);
   font-size: var(--fs-label);
   font-weight: 700;
   color: var(--sage-dk);
@@ -993,7 +1003,7 @@ body.app-shell.page-centered .flock-form-card {
   content: '';
   position: fixed;
   inset: 0;
-  background: url('../images/farm-bg.jpg') center center / cover no-repeat;
+  background: var(--bg-image) center center / cover no-repeat;
   z-index: 0;
 }
 
@@ -1003,9 +1013,9 @@ body.app-shell.page-centered .flock-form-card {
   inset: 0;
   background: linear-gradient(
     160deg,
-    rgba(var(--sky-rgb), .38) 0%,
-    rgba(var(--sage-rgb), .24) 55%,
-    rgba(252, 249, 242, .42) 100%
+    rgba(247, 243, 237, .78) 0%,
+    rgba(229, 222, 211, .72) 55%,
+    rgba(245, 241, 234, .8) 100%
   );
   z-index: 1;
 }
@@ -1015,13 +1025,13 @@ body.app-shell.page-centered .flock-form-card {
   z-index: 2;
   max-width: 340px;
   width: 100%;
-  background: rgba(252, 249, 242, .9);
-  backdrop-filter: blur(24px) saturate(1.5);
-  -webkit-backdrop-filter: blur(24px) saturate(1.5);
-  border: 1px solid rgba(255,255,255,.72);
+  background: var(--glass-bg);
+  backdrop-filter: blur(24px) saturate(1.4);
+  -webkit-backdrop-filter: blur(24px) saturate(1.4);
+  border: 1px solid var(--glass-border);
   border-radius: var(--r-xl);
   padding: 28px 26px 24px;
-  box-shadow: 0 24px 64px rgba(var(--navy-rgb), .2), 0 0 0 1px rgba(255,255,255,.35) inset;
+  box-shadow: var(--sh-lg), inset 0 1px 0 rgba(255, 255, 255, .85);
   animation: cardIn var(--t3) var(--spring) both;
 }
 
@@ -1125,10 +1135,10 @@ body.app-shell.page-centered .flock-form-card {
 .flock-summary-card {
   overflow: hidden;
   background:
-    linear-gradient(135deg, rgba(var(--sky-rgb), .88) 0%, rgba(var(--sage-rgb), .9) 100%);
+    linear-gradient(135deg, rgba(var(--navy-rgb), .92) 0%, rgba(122, 117, 96, .88) 55%, rgba(154, 139, 126, .86) 100%);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-color: rgba(255,255,255,.18);
+  border-color: rgba(255, 255, 255, .2);
   color: #fff;
   padding: 24px 22px;
 }
@@ -1138,7 +1148,7 @@ body.app-shell.page-centered .flock-form-card {
   position: absolute;
   right: 0; top: 0; bottom: 0;
   width: 45%;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 180' opacity='.07'%3E%3Cellipse cx='100' cy='125' rx='52' ry='44' fill='white'/%3E%3Cellipse cx='100' cy='82' rx='38' ry='34' fill='white'/%3E%3Cellipse cx='82' cy='60' rx='16' ry='13' fill='white'/%3E%3Ccircle cx='88' cy='53' r='4' fill='%231f3d18'/%3E%3Cpolygon points='74,47 64,38 80,41' fill='%23f37021'/%3E%3Cellipse cx='118' cy='58' rx='10' ry='9' fill='white'/%3E%3Ccircle cx='113' cy='53' r='3' fill='%231f3d18'/%3E%3Cpolygon points='122,46 130,39 124,48' fill='%23f37021'/%3E%3C/svg%3E") right center / 200px auto no-repeat;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 180' opacity='.07'%3E%3Cellipse cx='100' cy='125' rx='52' ry='44' fill='white'/%3E%3Cellipse cx='100' cy='82' rx='38' ry='34' fill='white'/%3E%3Cellipse cx='82' cy='60' rx='16' ry='13' fill='white'/%3E%3Ccircle cx='88' cy='53' r='4' fill='%235c4a3d'/%3E%3Cpolygon points='74,47 64,38 80,41' fill='%23c4a090'/%3E%3Cellipse cx='118' cy='58' rx='10' ry='9' fill='white'/%3E%3Ccircle cx='113' cy='53' r='3' fill='%235c4a3d'/%3E%3Cpolygon points='122,46 130,39 124,48' fill='%23c4a090'/%3E%3C/svg%3E") right center / 200px auto no-repeat;
   pointer-events: none;
   z-index: 0;
   border-radius: inherit;
@@ -1193,6 +1203,28 @@ body.app-shell.page-centered .flock-form-card {
 ═══════════════════════════════════ */
 .worksheets-card h2 { margin-bottom: 16px; }
 
+/* Dashboard worksheet tiles — row of 4, then row of 3 */
+.worksheets-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.menu-grid-row {
+  display: grid;
+  gap: 12px;
+}
+
+.menu-grid-row--4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.menu-grid-row--3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  width: min(100%, 78%);
+  margin-inline: auto;
+}
+
 .menu-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1201,10 +1233,10 @@ body.app-shell.page-centered .flock-form-card {
 
 .menu-tile {
   border-radius: var(--r-md);
-  border: 1px solid rgba(255, 255, 255, .6);
-  background: rgba(255, 255, 255, .62);
-  backdrop-filter: blur(14px) saturate(1.4);
-  -webkit-backdrop-filter: blur(14px) saturate(1.4);
+  border: 1px solid rgba(255, 255, 255, .75);
+  background: rgba(255, 255, 255, .58);
+  backdrop-filter: blur(14px) saturate(1.3);
+  -webkit-backdrop-filter: blur(14px) saturate(1.3);
   padding: 16px 10px 14px;
   cursor: pointer;
   text-align: center;
@@ -1241,13 +1273,13 @@ body.app-shell.page-centered .flock-form-card {
 }
 
 .menu-tile:hover {
-  background: rgba(255,255,255,.94);
-  border-color: var(--sky-lt);
+  background: rgba(255, 255, 255, .88);
+  border-color: var(--beige);
   transform: translateY(-3px);
-  box-shadow: 0 10px 28px rgba(var(--sage-rgb), .18);
+  box-shadow: 0 10px 28px rgba(var(--navy-rgb), .1);
 }
 .menu-tile:hover .menu-tile-icon {
-  transform: scale(1.15) rotate(-6deg);
+  transform: scale(1.12) rotate(-4deg);
   background: var(--sage);
   color: #fff;
 }
@@ -1492,9 +1524,9 @@ body.app-shell.page-centered .flock-form-card {
   }
 }
 
-/* Landscape — single scrollable row */
+/* Landscape — legacy menu-grid scroll (not used on dashboard worksheets) */
 @media (orientation: landscape) {
-  .menu-grid {
+  .menu-grid:not(.menu-grid-row) {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -1505,19 +1537,38 @@ body.app-shell.page-centered .flock-form-card {
     scrollbar-width: none;
   }
 
-  .menu-grid::-webkit-scrollbar { display: none; }
+  .menu-grid:not(.menu-grid-row)::-webkit-scrollbar { display: none; }
 
-  .menu-tile {
+  .menu-grid:not(.menu-grid-row) .menu-tile {
     flex: 0 0 128px;
     min-width: 128px;
     min-height: 0;
     display: block;
   }
 
-  .menu-tile-sub {
+  .menu-grid:not(.menu-grid-row) .menu-tile-sub {
     display: block;
     -webkit-line-clamp: unset;
     overflow: visible;
+  }
+
+  .worksheets-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .worksheets-menu .menu-grid-row {
+    display: grid;
+    width: 100%;
+    overflow: visible;
+  }
+
+  .worksheets-menu .menu-tile {
+    flex: unset;
+    min-width: 0;
+    display: flex;
+    min-height: 104px;
   }
 }
 
@@ -1534,6 +1585,12 @@ body.app-shell.page-centered .flock-form-card {
   .flock-summary-grid { grid-template-columns: repeat(3, 1fr); }
   .form-grid { grid-template-columns: 1fr 1fr; }
   .keypad-btn { min-height: 62px; }
+
+  .menu-grid-row--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .menu-grid-row--3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: min(100%, 78%);
+  }
 }
 
 /* Desktop ≥ 1024px */
@@ -1629,15 +1686,17 @@ body.app-shell.page-centered .flock-form-card {
   .flock-summary-item { padding: 10px 8px; }
   .flock-summary-value { font-size: var(--fs-ui); }
 
-  .menu-grid .menu-tile {
+  .menu-grid .menu-tile,
+  .worksheets-menu .menu-tile {
     min-height: 100px;
     padding: 14px 10px 12px;
   }
 
   @media (orientation: portrait) {
-    .menu-grid {
+    .menu-grid-row--4,
+    .menu-grid-row--3 {
       grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
+      width: 100%;
     }
   }
 
@@ -1870,6 +1929,12 @@ body.app-shell.page-centered .flock-form-card {
   .menu-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 8px;
+  }
+
+  .menu-grid-row--4,
+  .menu-grid-row--3 {
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
   }
 
   .menu-tile {
