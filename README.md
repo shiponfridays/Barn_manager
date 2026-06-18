@@ -10,7 +10,7 @@ npx serve .
 
 Open **http://localhost:3000** (use `http://` or `https://` — not `file://`).
 
-1. Enter the access code on the login screen.
+1. Enter the 4-digit access code on the login screen and press enter.
 2. Use the **Dashboard** to open any worksheet.
 3. Fill in data — it autosaves to `localStorage`.
 4. Click **Submit** (or **Submit to Sheet**) to append a snapshot to Google Sheets.
@@ -19,7 +19,7 @@ Open **http://localhost:3000** (use `http://` or `https://` — not `file://`).
 
 | Area | What it does |
 |------|----------------|
-| **Login** | Two-step keypad + year gate before entering the app |
+| **Login** | Single passcode keypad gate before entering the app |
 | **Dashboard** | Flock summary, worksheet tiles, To-Do (open repairs), Reminders |
 | **Flock Info** | Quota period, placement/ship dates, bird count, hatchery |
 | **Barn Setup** | Pre-placement checklist per barn (Barn 1 / Barn 2 tabs) |
@@ -46,8 +46,8 @@ barn-manager/
 ├── sw.js                         # Service worker
 ├── README.md
 ├── assets/
-│   ├── css/style.css             # Global styles (October Mist theme)
-│   ├── images/farm-bg.jpg
+│   ├── css/style.css             # Global styles (Natural Minimalist theme)
+│   ├── images/                   # farm-bg.jpg, farm-bg1.jpg (set via --bg-image), favicons
 │   └── js/
 │       ├── app.js                # Shared: storage, Sheets API, UI helpers, loader, toasts
 │       └── pages/                # One script per screen
@@ -125,6 +125,8 @@ Host the project root on any static host (Netlify, GitHub Pages, internal server
 - Sheet tab names must match **exactly** (spaces and capitalization).
 - Bump `CACHE_NAME` in `sw.js` when you need clients to pick up asset changes.
 - `# of Birds` on Flock Info is required before submit.
+- **Access code** is set in `assets/js/pages/login.js` (`CORRECT_CODE`). This is a light client-side gate only — the code is visible in source, so it is not real security.
+- **Theme / background:** colors live in the `:root` tokens in `assets/css/style.css`; swap the background photo by changing the `--bg-image` token (currently `farm-bg1.jpg`).
 
 ## Troubleshooting
 
