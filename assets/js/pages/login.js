@@ -5,17 +5,11 @@
       }
 
       const CORRECT_CODE = '8811';
-      const CORRECT_YEAR = 1990;
 
       let entered = '';
 
       const display = document.getElementById('keypadDisplay');
       const errorEl = document.getElementById('keypadError');
-      const yearStep = document.getElementById('step-year');
-      const keypadStep = document.getElementById('step-keypad');
-      const yearInput = document.getElementById('yearInput');
-      const yearError = document.getElementById('yearError');
-      const yearSubmit = document.getElementById('yearSubmit');
 
       function updateDisplay() {
         display.textContent = entered ? entered.replace(/./g, '•') : '••••';
@@ -35,9 +29,8 @@
 
       function handleEnter() {
         if (entered === CORRECT_CODE) {
-          keypadStep.style.display = 'none';
-          yearStep.style.display = 'block';
-          yearInput.focus();
+          setAuthenticated();
+          window.location.href = 'pages/dashboard.html';
         } else {
           errorEl.textContent = 'Incorrect';
           clearCode();
@@ -56,20 +49,6 @@
             handleEnter();
           }
         });
-      });
-
-      yearSubmit.addEventListener('click', () => {
-        const yr = parseInt(yearInput.value, 10);
-        if (yr === CORRECT_YEAR) {
-          setAuthenticated();
-          window.location.href = 'pages/dashboard.html';
-        } else {
-          yearError.textContent = 'Incorrect';
-        }
-      });
-
-      yearInput.addEventListener('keyup', (e) => {
-        if (e.key === 'Enter') yearSubmit.click();
       });
 
       updateDisplay();

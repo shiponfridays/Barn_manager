@@ -60,7 +60,7 @@
   --terra-rgb:    196, 160, 144;
   --mist-rgb:     201, 191, 181;
 
-  --bg-image:     url('../images/farm-bg1.jpg');
+  --bg-image:     url('../images/farm-bg.png');
 
   --glass-bg:     rgba(247, 243, 237, .9);
   --glass-border: rgba(255, 255, 255, .72);
@@ -144,12 +144,13 @@ body.app-shell::after {
   content: '';
   position: fixed;
   inset: 0;
-  background: linear-gradient(
+  /* background: rgba(247, 243, 237, .1) */
+  /* background: linear-gradient(
     165deg,
     rgba(247, 243, 237, .84) 0%,
     rgba(229, 222, 211, .78) 48%,
     rgba(245, 241, 234, .86) 100%
-  );
+  ); */
   z-index: -1;
 }
 

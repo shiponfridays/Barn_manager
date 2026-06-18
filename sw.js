@@ -1,4 +1,4 @@
-const CACHE_NAME = 'barn-manager-cache-v29';
+const CACHE_NAME = 'barn-manager-cache-v30';
 const urlsToCache = [
   './',
   './index.html',
